@@ -1,8 +1,6 @@
 package tests;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestContext;
@@ -19,11 +17,13 @@ public class BaseTest {
     @BeforeTest
     public void setDriver(ITestContext ctx) throws MalformedURLException {
         String host = "localhost";
-        DesiredCapabilities dc = DesiredCapabilities.chrome();
+        DesiredCapabilities dc;
 
         if (System.getProperty("BROWSER") != null
                 && System.getProperty("BROWSER").equalsIgnoreCase("firefox")) {
             dc = DesiredCapabilities.firefox();
+        } else {
+            dc = DesiredCapabilities.chrome();
         }
 
         if (System.getProperty("HUB_HOST") != null) {
