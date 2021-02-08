@@ -16,6 +16,7 @@
 .idea/**/usage.statistics.xml
 .idea/**/dictionaries
 .idea/**/shelf
+.idea
 
 # Generated files
 .idea/**/contentModel.xml
@@ -117,3 +118,4 @@ hs_err_pid*
 
 # Surefire-reports ignoring
 target/surefire-reports/
+target
