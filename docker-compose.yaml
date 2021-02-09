@@ -17,7 +17,7 @@ services:
         environment:
             - HUB_HOST=hub
     search-module1:
-        image: max/selenium-docker
+        image: mogreat1/selenium-docker
         depends_on:
             - chrome
             - firefox
@@ -28,7 +28,7 @@ services:
         volumes:
             - ./search-result1:/user/share/test/test-output
     search-module2:
-        image: max/selenium-docker
+        image: mogreat1/selenium-docker
         depends_on:
             - chrome
             - firefox
@@ -39,7 +39,7 @@ services:
         volumes:
             - ./search-result2:/user/share/test/test-output
     book-flight-module1:
-        image: max/selenium-docker
+        image: mogreat1/selenium-docker
         depends_on:
           - chrome
           - firefox
@@ -50,7 +50,7 @@ services:
         volumes:
             - ./book-result1:/user/share/test/test-output
     book-flight-module2:
-        image: max/selenium-docker
+        image: mogreat1/selenium-docker
         depends_on:
             - chrome
             - firefox
