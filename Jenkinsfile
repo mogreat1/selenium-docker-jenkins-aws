@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Build Image') {
             steps {
-                bat "docker build -t='mogreat1/selenium-docker' ."
+                bat "docker build -t mogreat1/selenium-docker ."
             }
         }
         stage('Push Image') {
