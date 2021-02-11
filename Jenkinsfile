@@ -8,13 +8,15 @@ pipeline {
         }
         stage('Build Image') {
             steps {
-                bat "docker build -t mogreat1/selenium-docker ."
+                bat "docker build -t='mogreat1/selenium-docker' ."
             }
         }
         stage('Push Image') {
             steps {
-		        bat "docker login --username=mogreat1 --password=MaxDocker1"
-		        bat "docker push mogreat1/selenium-docker:latest"
+			    withCredentials([usernamePassword(credentialsId: 'dockerhub', passwordVariable: 'pass', usernameVariable: 'user')]) {
+			        bat "docker login --username=${user} --password=${pass}"
+			        bat "docker push mogreat1/selenium-docker:latest"
+			    }
             }
         }
     }
